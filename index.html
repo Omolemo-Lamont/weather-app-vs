@@ -12,7 +12,9 @@
 
 <body>
     <div class="container">
+        <div class="rapper">
         <div class="box">
+            <div class="overview">
             <h1>
                 Pretoria
             </h1>
@@ -24,10 +26,15 @@
                     Clear
                 </li>
             </ul>
+            </div>
             <div class="row">
                 <div class="col-6">
-                    <img src=https://ssl.gstatic.com/onebox/weather/64/sunny.png alt="Clear" />
-                    13°C |°F
+                    <div class="d-flex weather-temperature">
+                    <img src=https://ssl.gstatic.com/onebox/weather/64/sunny.png alt="Clear" id="icon" />
+                   <div class="d-flex-left">
+                    <strong id="temperature">12</strong><span class="unists">°C |<a href="#">°F</a></span>
+                    </div>
+                    </div>
                 </div>
                 <div class="col-6">
                     <ul>
@@ -43,10 +50,11 @@
                     </ul>
                 </div>
             </div>
-            <small>
-                <a href="https://github.com/Omolemo-Lamont/weather-app-vs.git" target="_blank"> open source code by Omolemo
-                    Lamont</a>
-            </small>
+        </div>
+        <small>
+            <a href="https://github.com/Omolemo-Lamont/weather-app-vs.git" target="_blank"> open source code by Omolemo
+                Lamont</a>
+        </small>
         </div>
         <script src="src/index.js"></script>
 </body>
