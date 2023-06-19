@@ -41,9 +41,20 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].descriptio);
 }
+function search(city) {
+  let apiKey = "6f727a99c6dff687686c2d48cae1c86d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Pretoria&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-let apiKey = "6f727a99c6dff687686c2d48cae1c86d";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Pretoria&appid=${apiKey}&units=metric`;
-let city = "Pretoria";
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+//let form = document.querySelector("#search-form");
+//form.addEventListener("submit", handleSubmit);
 
-axios.get(apiUrl).then(displayTemperature);
+search("Pretoria");
